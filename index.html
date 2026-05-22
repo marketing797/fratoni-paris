@@ -21,18 +21,17 @@
     --gold: #c9a84c;
     --white: #ffffff;
   }
-  html, body {
-    height: 100%;
+  html {
     background: var(--navy);
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
   }
   body {
     min-height: 100dvh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 24px 16px;
+    padding: 16px;
+    background: var(--navy);
     position: relative;
   }
   body::before {
@@ -48,34 +47,36 @@
   .card {
     position: relative;
     z-index: 1;
-    max-width: 420px;
+    max-width: 400px;
     width: 100%;
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 24px;
-    padding: 40px 32px 36px;
+    border-radius: 20px;
+    padding: 20px 18px;
     backdrop-filter: blur(12px);
-    box-shadow: 0 32px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
     animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both;
   }
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(28px); }
+    from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+
+  /* Logos topo */
   .logos-top {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    margin-bottom: 10px;
+    gap: 12px;
+    margin-bottom: 8px;
   }
   .logo-sq {
-    width: 70px;
-    height: 70px;
-    border-radius: 14px;
+    width: 62px;
+    height: 62px;
+    border-radius: 12px;
     overflow: hidden;
     flex-shrink: 0;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
   }
   .logo-sq img {
     width: 100%;
@@ -84,19 +85,19 @@
   }
   .logo-divider-v {
     width: 1px;
-    height: 40px;
+    height: 36px;
     background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
     flex-shrink: 0;
   }
   .logo-casa-wrap {
     display: flex;
     justify-content: center;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
   }
   .logo-casa {
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
     width: 108px;
   }
   .logo-casa img {
@@ -104,112 +105,118 @@
     height: auto;
     display: block;
   }
+
   .badge {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 5px;
     background: rgba(201,168,76,0.12);
     border: 1px solid rgba(201,168,76,0.3);
     color: var(--gold);
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    padding: 5px 12px;
+    padding: 4px 10px;
     border-radius: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .badge::before { content: '★'; font-size: 8px; }
+
   .headline {
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(26px, 7vw, 36px);
+    font-size: clamp(22px, 6vw, 30px);
     font-weight: 900;
     color: var(--white);
     line-height: 1.1;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     text-align: center;
   }
   .headline span { color: var(--red); display: block; }
+
   .sub {
     color: rgba(255,255,255,0.55);
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
-    line-height: 1.6;
-    margin-bottom: 24px;
+    line-height: 1.5;
+    margin-bottom: 12px;
   }
+
   .discount-box {
     background: linear-gradient(135deg, rgba(232,59,59,0.15), rgba(232,59,59,0.05));
     border: 1px solid rgba(232,59,59,0.3);
-    border-radius: 16px;
-    padding: 18px 24px;
+    border-radius: 14px;
+    padding: 12px 18px;
     display: flex;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
+    gap: 16px;
+    margin-bottom: 10px;
   }
   .discount-number {
     font-family: 'Poppins', sans-serif;
-    font-size: 52px;
+    font-size: 42px;
     font-weight: 900;
     color: var(--red);
     line-height: 1;
     flex-shrink: 0;
     text-align: center;
   }
-  .discount-number sup { font-size: 22px; vertical-align: super; }
-  .discount-text { color: rgba(255,255,255,0.75); font-size: 13px; line-height: 1.5; }
-  .discount-text strong { color: var(--white); display: block; font-size: 15px; margin-bottom: 2px; }
+  .discount-number sup { font-size: 18px; vertical-align: super; }
+  .discount-text { color: rgba(255,255,255,0.75); font-size: 12px; line-height: 1.4; }
+  .discount-text strong { color: var(--white); display: block; font-size: 13px; margin-bottom: 2px; }
+
   .coupon-teaser {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     background: rgba(201,168,76,0.07);
     border: 1px dashed rgba(201,168,76,0.35);
-    border-radius: 12px;
-    padding: 14px 18px;
-    margin-bottom: 24px;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
   }
-  .coupon-icon { font-size: 22px; flex-shrink: 0; }
+  .coupon-icon { font-size: 18px; flex-shrink: 0; }
   .coupon-teaser-text { flex: 1; }
-  .coupon-teaser-text strong { display: block; color: var(--gold); font-size: 13px; font-weight: 500; margin-bottom: 2px; }
-  .coupon-teaser-text span { font-size: 11px; color: rgba(255,255,255,0.35); }
-  .coupon-lock { font-size: 16px; opacity: 0.4; }
-  .cta-group { display: flex; flex-direction: column; gap: 12px; }
+  .coupon-teaser-text strong { display: block; color: var(--gold); font-size: 12px; font-weight: 500; margin-bottom: 1px; }
+  .coupon-teaser-text span { font-size: 10px; color: rgba(255,255,255,0.35); }
+
+  .cta-group { display: flex; flex-direction: column; gap: 8px; }
   .cta-label {
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.35);
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .cta-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     width: 100%;
-    padding: 16px 24px;
+    padding: 14px 20px;
     background: #25D366;
     color: #fff;
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     border: none;
-    border-radius: 14px;
+    border-radius: 12px;
     cursor: pointer;
     text-decoration: none;
-    box-shadow: 0 8px 24px rgba(37,211,102,0.3);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
-  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(37,211,102,0.4); background: #20c05a; }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(37,211,102,0.4); }
   .cta-btn:active { transform: translateY(0); }
-  .whatsapp-icon { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
+  .whatsapp-icon { width: 18px; height: 18px; fill: white; flex-shrink: 0; }
+
   .footer-note {
     text-align: center;
-    margin-top: 20px;
-    font-size: 11px;
+    margin-top: 12px;
+    font-size: 10px;
     color: rgba(255,255,255,0.22);
     letter-spacing: 0.04em;
   }
@@ -252,7 +259,6 @@
       <strong>Resgate seu cupom</strong>
       <span>Chame no WhatsApp e compre com desconto exclusivo</span>
     </div>
-    
   </div>
 
   <div class="cta-group">
